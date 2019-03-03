@@ -13,8 +13,9 @@
 		"bin-debug/LoadingUI.js",
 		"bin-debug/Main.js",
 		"bin-debug/Platform.js",
-		"bin-debug/PlayerScene.js",
 		"bin-debug/ThemeAdapter.js",
-		"bin-debug/Game/MainScene.js"
+		"bin-debug/Game/MainScene.js",
+		"bin-debug/Game/PlayerScene.js",
+		"bin-debug/Game/SceneManager.js"
 	]
 }

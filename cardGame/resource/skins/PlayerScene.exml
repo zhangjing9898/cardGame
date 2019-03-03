@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="PlayerSceneSkin" width="480" height="800" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
 	<w:Config id="169423c7c2e" ></w:Config>
-	<e:Image left="0" top="0" source="commonBg_jpg"/>
+	<e:Image left="0" top="0" source="commonBg_jpg" locked="true"/>
 	<e:Image source="profileTitle_png" x="174.5" y="134" locked="true"/>
-	<e:Image source="skillBg_png" y="472" anchorOffsetX="0" right="36" width="401" anchorOffsetY="0" height="116" locked="true"/>
-	<e:Image source="profileContent_png" left="31" top="185" locked="true"/>
+	<e:Image source="skillBg_png" y="472" anchorOffsetX="0" right="30" width="407" anchorOffsetY="0" height="136"/>
+	<e:Image source="profileContent_png" left="31" top="185"/>
 	<e:Button id="btn_return" label="" x="15.86" y="133.72" locked="true">
 		<e:skinName>
 			<e:Skin states="up,down,disabled">
@@ -31,11 +31,11 @@
 			</e:Skin>
 		</e:skinName>
 	</e:Button>
-	<e:Scroller id="zhuangbei" width="354" height="118" x="62" y="554" anchorOffsetX="0" anchorOffsetY="0" scrollPolicyH="on" scrollPolicyV="off">
+	<e:Scroller id="zhuangbei" width="390" height="132" x="50" y="480" anchorOffsetX="0" anchorOffsetY="0" scrollPolicyH="on" scrollPolicyV="off">
+		<e:List id="item_zhuangbei" itemRendererSkinName="zhuangbeiItem" width="396" height="138" anchorOffsetX="0" anchorOffsetY="0">
+			<e:layout>
+				<e:HorizontalLayout/>
+			</e:layout>
+		</e:List>
 	</e:Scroller>
-	<e:List id="item_zhuangbei" itemRendererSkinName="zhuangbeiItem" anchorOffsetX="0" width="389.58" anchorOffsetY="0" height="108" y="475.82" x="49" rotation="0.66">
-		<e:layout>
-		<e:HorizontalLayout/>
-		</e:layout>
-	</e:List>
 </e:Skin>

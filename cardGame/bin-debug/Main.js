@@ -172,7 +172,10 @@ var Main = (function (_super) {
      * Create scene interface
      */
     Main.prototype.createGameScene = function () {
-        this.addChild(new MainScene());
+        // 把this设置为场景管理器的根舞台
+        SceneManager.instance.setStage(this);
+        // 调用sceneManager的静态方法
+        SceneManager.toMainScene();
     };
     /**
      * 描述文件加载成功，开始播放动画

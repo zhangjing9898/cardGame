@@ -52,6 +52,8 @@ declare module skins{
 }
 declare class MainSceneSkin extends eui.Skin{
 }
+declare class PlayerSceneSkin extends eui.Skin{
+}
 declare class mbtnAbout extends eui.Skin{
 }
 declare class mbtnGoods extends eui.Skin{
@@ -59,4 +61,6 @@ declare class mbtnGoods extends eui.Skin{
 declare class mbtnHero extends eui.Skin{
 }
 declare class mbtnPlayer extends eui.Skin{
+}
+declare class zhuangbeiItem extends eui.Skin{
 }
