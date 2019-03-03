@@ -1,10 +1,15 @@
 {
-  "1694184be80": {
-    "path": "MainScene.ts",
-    "class": "MainScene",
-    "parentPath": ""
-  },
-  "global": {
-    "globalRulerEnable": false
-  }
+    "1694184be80": {
+        "path": "MainScene.ts",
+        "class": "MainScene",
+        "parentPath": ""
+    },
+    "global": {
+        "globalRulerEnable": false
+    },
+    "169423c7c2e": {
+        "path": "PlayerScene.ts",
+        "class": "PlayerScene",
+        "parentPath": ""
+    }
 }
