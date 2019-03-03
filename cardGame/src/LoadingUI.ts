@@ -31,21 +31,53 @@ class LoadingUI extends egret.Sprite implements RES.PromiseTaskReporter {
 
     public constructor() {
         super();
-        this.createView();
+        // 当被添加到舞台的时候触发 (被添加到舞台,说明资源组已经加载完成)
+        this.addEventListener(egret.Event.ADDED_TO_STAGE, this.createView, this);
     }
 
     private textField: egret.TextField;
+    private bgImg: egret.Bitmap;
+    private loadImg: egret.Bitmap;
 
     private createView(): void {
+       this.width = this.stage.stageWidth;
+       this.height = this.stage.stageHeight;
+
+    //    bgImg
+        this.bgImg = new egret.Bitmap();
+        this.bgImg.texture = RES.getRes('loading_jpg');
+        this.addChild(this.bgImg);
+
+        // loading icon
+        this.loadImg = new egret.Bitmap();
+        this.loadImg.texture = RES.getRes('loading2_png');
+        this.loadImg.anchorOffsetX = this.loadImg.width / 2;
+        this.loadImg.anchorOffsetY = this.loadImg.height / 2;
+        this.loadImg.x = this.width / 2;
+        this.loadImg.y = this.height / 2;
+        this.addChild(this.loadImg);
+
+        // text
         this.textField = new egret.TextField();
         this.addChild(this.textField);
-        this.textField.y = 300;
         this.textField.width = 480;
-        this.textField.height = 100;
+        this.textField.height = 20;
+        this.textField.y = this.height / 2 - this.textField.height / 2;
+        this.textField.size = 14;
         this.textField.textAlign = "center";
+
+        // 监听帧事件，让每帧都loading转动
+        this.addEventListener(egret.Event.ENTER_FRAME, this.update, this);
     }
 
+    private update() {
+        // rotate
+        this.loadImg.rotation += 5;
+    }
+
+    // this fn will auto import when loading
     public onProgress(current: number, total: number): void {
-        this.textField.text = `Loading...${current}/${total}`;
+        let per = Math.floor((current / total) * 100)
+        this.textField.text = `${per}%`;
     }
 }
