@@ -29,7 +29,7 @@ var SceneManager = (function () {
     // 删除多余的场景
     SceneManager.prototype.removeOther = function (scene) {
         var _this = this;
-        var arr = [this.playerScene, this.heroScene];
+        var arr = [this.playerScene, this.heroScene, this.goodsScene, this.aboutScene];
         arr.forEach(function (item) {
             if (scene === item) {
                 return;

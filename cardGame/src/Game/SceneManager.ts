@@ -37,7 +37,7 @@ class SceneManager {
 
     // 删除多余的场景
     private removeOther(scene) {
-        let arr = [this.playerScene, this.heroScene];
+        let arr = [this.playerScene, this.heroScene, this.goodsScene, this.aboutScene];
         arr.forEach((item)=> {
             if(scene === item) {
                 return;
