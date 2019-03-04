@@ -34,6 +34,24 @@ var HeroScene = (function (_super) {
         this.list_hero.dataProvider = EUIArr;
         // 设置list_hero的项呈视器 (这里直接写类名,而不是写实例)
         this.list_hero.itemRenderer = HeroList_item;
+        this.btn_return.addEventListener(egret.TouchEvent.TOUCH_TAP, function (e) {
+            SceneManager.toMainScene();
+            SceneManager.instance.mainScene.toggleBtn(0);
+        }, this);
+        this.btn_select.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onClickSelect, this);
+    };
+    HeroScene.prototype.onClickSelect = function (e) {
+        SceneManager.toMainScene();
+        SceneManager.instance.mainScene.toggleBtn(0);
+        var dataProvider = this.list_hero.dataProvider;
+        var arr = [];
+        for (var i = 0; i < dataProvider.length; i++) {
+            var item = dataProvider.getItemAt(i);
+            if (item.isSelected) {
+                arr.push(item.name);
+            }
+        }
+        SceneManager.showInfo(arr, 1500);
     };
     return HeroScene;
 }(eui.Component));

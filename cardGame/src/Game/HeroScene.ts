@@ -36,6 +36,27 @@ class HeroScene extends eui.Component implements  eui.UIComponent {
 		this.list_hero.dataProvider = EUIArr;
 		// 设置list_hero的项呈视器 (这里直接写类名,而不是写实例)
 		this.list_hero.itemRenderer = HeroList_item;
+
+		this.btn_return.addEventListener(egret.TouchEvent.TOUCH_TAP,(e) => {
+			SceneManager.toMainScene();
+			SceneManager.instance.mainScene.toggleBtn(0);
+		} , this);
+
+		this.btn_select.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onClickSelect, this);
+	}
+	private onClickSelect(e: egret.Event) {
+		SceneManager.toMainScene();
+		SceneManager.instance.mainScene.toggleBtn(0);
+
+		let dataProvider = this.list_hero.dataProvider;
+		let arr: string[] = [];
+		for (let i = 0; i < dataProvider.length; i++) {
+			let item = dataProvider.getItemAt(i);
+			if (item.isSelected) {
+				arr.push(item.name);
+			}
+		}
+		SceneManager.showInfo(arr, 1500);
 	}
 	
 }
