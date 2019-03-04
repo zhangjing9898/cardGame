@@ -62,6 +62,9 @@ class MainScene extends eui.Component implements  eui.UIComponent {
 			case 0:
 				SceneManager.toPlayerScene();
 			break;
+			case 1:
+				SceneManager.toHeroScene();
+			break;
 		}
 
 	}

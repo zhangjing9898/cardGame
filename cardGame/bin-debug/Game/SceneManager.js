@@ -8,6 +8,7 @@ var SceneManager = (function () {
     function SceneManager() {
         this.mainScene = new MainScene;
         this.playerScene = new PlayerScene;
+        this.heroScene = new HeroScene;
     }
     Object.defineProperty(SceneManager, "instance", {
         get: function () {
@@ -22,6 +23,19 @@ var SceneManager = (function () {
     // 设置根场景
     SceneManager.prototype.setStage = function (s) {
         this._stage = s;
+    };
+    // 删除多余的场景
+    SceneManager.prototype.removeOther = function (scene) {
+        var _this = this;
+        var arr = [this.playerScene, this.heroScene];
+        arr.forEach(function (item) {
+            if (scene === item) {
+                return;
+            }
+            else if (item.parent) {
+                _this.mainScene.removeChild(item);
+            }
+        });
     };
     // 主场景
     SceneManager.toMainScene = function () {
@@ -43,9 +57,14 @@ var SceneManager = (function () {
     };
     // 玩家场景
     SceneManager.toPlayerScene = function () {
-        var stage = this.instance._stage;
+        this.instance.removeOther(this.instance.playerScene);
         // 把玩家场景添加到主场景
         this.instance.mainScene.addChild(this.instance.playerScene);
+    };
+    // 英雄场景
+    SceneManager.toHeroScene = function () {
+        this.instance.removeOther(this.instance.heroScene);
+        this.instance.mainScene.addChild(this.instance.heroScene);
     };
     return SceneManager;
 }());

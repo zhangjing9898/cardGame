@@ -8,10 +8,12 @@ class SceneManager {
     private mainScene: MainScene;
     // 玩家场景
     private playerScene: PlayerScene;
+    private heroScene: HeroScene;
 
     constructor() {
         this.mainScene = new MainScene;
         this.playerScene = new PlayerScene;
+        this.heroScene = new HeroScene;
     }
 
     // 获取实例
@@ -27,6 +29,18 @@ class SceneManager {
     // 设置根场景
     public setStage(s: egret.DisplayObjectContainer) {
         this._stage = s;
+    }
+
+    // 删除多余的场景
+    private removeOther(scene) {
+        let arr = [this.playerScene, this.heroScene];
+        arr.forEach((item)=> {
+            if(scene === item) {
+                return;
+            } else if(item.parent) {
+                this.mainScene.removeChild(item);
+            }
+        })
     }
 
     // 主场景
@@ -52,8 +66,14 @@ class SceneManager {
 
     // 玩家场景
     static toPlayerScene() {
-        let stage: egret.DisplayObjectContainer = this.instance._stage;
+        this.instance.removeOther(this.instance.playerScene);
         // 把玩家场景添加到主场景
         this.instance.mainScene.addChild(this.instance.playerScene);
+    }
+
+    // 英雄场景
+    static toHeroScene() {
+        this.instance.removeOther(this.instance.heroScene);
+        this.instance.mainScene.addChild(this.instance.heroScene);
     }
 }

@@ -55,6 +55,9 @@ var MainScene = (function (_super) {
             case 0:
                 SceneManager.toPlayerScene();
                 break;
+            case 1:
+                SceneManager.toHeroScene();
+                break;
         }
     };
     return MainScene;
