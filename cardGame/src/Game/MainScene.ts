@@ -61,9 +61,21 @@ class MainScene extends eui.Component implements  eui.UIComponent {
 		switch(index) {
 			case 0:
 				SceneManager.toPlayerScene();
+				this.setChildIndex(this.Group_mbtn, this.numChildren);
 			break;
 			case 1:
 				SceneManager.toHeroScene();
+				this.setChildIndex(this.Group_mbtn, this.numChildren);
+			break;
+			case 2:
+				SceneManager.toGoodsScene();
+				this.setChildIndex(this.Group_mbtn, this.numChildren);
+			break;
+			case 3:
+				SceneManager.toAboutScene();
+				this.setChildIndex(this.Group_mbtn, this.numChildren);
+			break;
+			default:
 			break;
 		}
 

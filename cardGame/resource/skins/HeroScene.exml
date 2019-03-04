@@ -24,7 +24,7 @@
 			</e:Skin>
 		</e:skinName>
 	</e:Button>
-	<e:Scroller width="424" height="480" x="28" y="198" anchorOffsetX="0" anchorOffsetY="0" scrollPolicyH="off" scrollPolicyV="on">
+	<e:Scroller id="src_hero" width="424" height="480" x="28" y="198" anchorOffsetX="0" anchorOffsetY="0" scrollPolicyH="off" scrollPolicyV="on">
 		<e:List id="list_hero" anchorOffsetX="0" width="416" anchorOffsetY="0" height="476" itemRendererSkinName="heroListItem"/>
 	</e:Scroller>
 </e:Skin>

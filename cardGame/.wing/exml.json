@@ -16,5 +16,15 @@
         "path": "HeroScene.ts",
         "class": "HeroScene",
         "parentPath": ""
+    },
+    "16946d16469": {
+        "path": "Game\\GoodsScene.ts",
+        "class": "GoodsScene",
+        "parentPath": ""
+    },
+    "16947312808": {
+        "path": "Game\\AboutScene.ts",
+        "class": "AboutScene",
+        "parentPath": ""
     }
 }

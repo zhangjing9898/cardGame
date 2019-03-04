@@ -9,11 +9,15 @@ class SceneManager {
     // 玩家场景
     public playerScene: PlayerScene;
     public heroScene: HeroScene;
+    public goodsScene: GoodsScene;
+    public aboutScene: AboutScene;
 
     constructor() {
-        this.mainScene = new MainScene;
-        this.playerScene = new PlayerScene;
-        this.heroScene = new HeroScene;
+        this.mainScene = new MainScene();
+        this.playerScene = new PlayerScene();
+        this.heroScene = new HeroScene();
+        this.goodsScene = new GoodsScene();
+        this.aboutScene = new AboutScene();
     }
 
     // 获取实例
@@ -101,5 +105,15 @@ class SceneManager {
     static toHeroScene() {
         this.instance.removeOther(this.instance.heroScene);
         this.instance.mainScene.addChild(this.instance.heroScene);
+    }
+
+    static toGoodsScene() {
+        this.instance.removeOther(this.instance.goodsScene);
+        this.instance.mainScene.addChild(this.instance.goodsScene);
+    }
+
+    static toAboutScene() {
+        this.instance.removeOther(this.instance.aboutScene);
+        this.instance.mainScene.addChild(this.instance.aboutScene);
     }
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GoodsSceneSkin" width="480" height="800" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16946d16469" ></w:Config>
+	<e:Image source="bgListPage_jpg" left="0" top="0" locked="true"/>
+	<e:Image source="goodsTitle_png" x="174.5" y="132" locked="true"/>
+	<e:Button id="btn_return" label="" x="16" y="130">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="90%" height="90%" 
+					 width.down="100%" height.down="100%"
+					 horizontalCenter="0"  verticalCenter="0"
+					 source="btnReturn_png" source.down="btnReturn_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Scroller id="src_goods" width="428" height="498" x="26" y="196" anchorOffsetX="0" anchorOffsetY="0" scrollPolicyH="off" scrollPolicyV="on">
+		<e:List id="list_goods" itemRendererSkinName="goodsListItem"/>
+	</e:Scroller>
+</e:Skin>

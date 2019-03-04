@@ -6,9 +6,11 @@ var __reflect = (this && this.__reflect) || function (p, c, t) {
 // 这样可以保证场景管理类有且只有一个实例，便于操作和管理
 var SceneManager = (function () {
     function SceneManager() {
-        this.mainScene = new MainScene;
-        this.playerScene = new PlayerScene;
-        this.heroScene = new HeroScene;
+        this.mainScene = new MainScene();
+        this.playerScene = new PlayerScene();
+        this.heroScene = new HeroScene();
+        this.goodsScene = new GoodsScene();
+        this.aboutScene = new AboutScene();
     }
     Object.defineProperty(SceneManager, "instance", {
         get: function () {
@@ -88,6 +90,14 @@ var SceneManager = (function () {
     SceneManager.toHeroScene = function () {
         this.instance.removeOther(this.instance.heroScene);
         this.instance.mainScene.addChild(this.instance.heroScene);
+    };
+    SceneManager.toGoodsScene = function () {
+        this.instance.removeOther(this.instance.goodsScene);
+        this.instance.mainScene.addChild(this.instance.goodsScene);
+    };
+    SceneManager.toAboutScene = function () {
+        this.instance.removeOther(this.instance.aboutScene);
+        this.instance.mainScene.addChild(this.instance.aboutScene);
     };
     return SceneManager;
 }());
