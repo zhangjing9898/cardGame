@@ -37,13 +37,25 @@ var MainScene = (function (_super) {
     // switch button
     // @param btn 参数是eui.ToggleButton的时候切换按钮, 参数是0的时候设置为全部不选中
     MainScene.prototype.toggleBtn = function (btn) {
-        console.log('切换');
         // first set all btn to not selected
+        if (btn === 0) {
+            return;
+        }
         for (var i = 0; i < this.Group_mbtn.numChildren; i++) {
             var theBtn = this.Group_mbtn.getChildAt(i);
             theBtn.selected = false;
         }
+        // 把传进来的btn设置为选中状态
+        btn = btn;
         btn.selected = true;
+        // 获取当前点击的按钮的下标, 用来实现不同按钮对应的功能
+        // 0 1 2 3 对应 玩家, 英雄, 物品, 关于
+        var index = this.Group_mbtn.getChildIndex(btn);
+        switch (index) {
+            case 0:
+                SceneManager.toPlayerScene();
+                break;
+        }
     };
     return MainScene;
 }(eui.Component));

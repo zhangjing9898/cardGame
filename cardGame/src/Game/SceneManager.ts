@@ -31,9 +31,12 @@ class SceneManager {
 
     // 主场景
     static toMainScene() {
+        console.log('home');
         let stage: egret.DisplayObjectContainer = this.instance._stage;
         let mainScene = SceneManager.instance.mainScene;
 
+        // 取消all btn selected
+        mainScene.toggleBtn(0);
         // 判断主场景是否有父级
         // 如果有，说明已经被添加到场景中
         if (!mainScene.parent) {
@@ -41,5 +44,16 @@ class SceneManager {
             // 把主场景添加到之前设置好的根舞台中
             stage.addChild(mainScene);
         }
+
+        if (SceneManager.instance.playerScene.parent) {
+            mainScene.removeChild(SceneManager.instance.playerScene);
+        }
+    }
+
+    // 玩家场景
+    static toPlayerScene() {
+        let stage: egret.DisplayObjectContainer = this.instance._stage;
+        // 把玩家场景添加到主场景
+        this.instance.mainScene.addChild(this.instance.playerScene);
     }
 }

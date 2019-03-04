@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="HeroSceneSkin" width="482" height="800" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" >
+	<w:Config id="16942ca37c0" ></w:Config>
+	<e:Image width="474" height="798" x="0" y="0" source="commonBg_jpg" anchorOffsetX="0" anchorOffsetY="0"/>
+	<e:Image source="herosTitle_png" x="171" y="130"/>
+	<e:Button id="btn_return" label="" x="16.37" y="129.1">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="90%" height="90%" 
+					 width.down="100%" height.down="100%"
+					 horizontalCenter="0"  verticalCenter="0"
+					 source="btnReturn_png" source.down="btnReturn_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="btn_select" label="" x="379" y="129">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="90%" height="90%" 
+					 width.down="100%" height.down="100%"
+					 horizontalCenter="0"  verticalCenter="0" source="btnOK_png" source.down="btnOK_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Scroller width="200" height="200" x="50" y="218">
+		<e:List/>
+	</e:Scroller>
+</e:Skin>

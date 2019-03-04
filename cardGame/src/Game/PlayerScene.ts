@@ -35,6 +35,12 @@ class PlayerScene extends eui.Component implements  eui.UIComponent {
 		this.item_zhuangbei.dataProvider = EUIArr;
 		// 隐藏进度条
 		this.zhuangbei.horizontalScrollBar.autoVisibility = false;
+		// 给return btn add event
+		this.btn_return.addEventListener(egret.TouchEvent.TOUCH_TAP, this.returnMain, this);
+	}
+	
+	private returnMain() {
+		SceneManager.toMainScene();
 	}
 	
 }

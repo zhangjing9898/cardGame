@@ -105,12 +105,15 @@ var Main = (function (_super) {
                     case 1:
                         _a.sent();
                         this.createGameScene();
-                        return [4 /*yield*/, RES.getResAsync("description_json")];
+                        return [4 /*yield*/, RES.getResAsync("description_json")
+                            // this.startAnimation(result);
+                        ];
                     case 2:
                         result = _a.sent();
-                        this.startAnimation(result);
+                        // this.startAnimation(result);
                         return [4 /*yield*/, platform.login()];
                     case 3:
+                        // this.startAnimation(result);
                         _a.sent();
                         return [4 /*yield*/, platform.getUserInfo()];
                     case 4:

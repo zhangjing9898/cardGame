@@ -25,8 +25,11 @@ var SceneManager = (function () {
     };
     // 主场景
     SceneManager.toMainScene = function () {
+        console.log('home');
         var stage = this.instance._stage;
         var mainScene = SceneManager.instance.mainScene;
+        // 取消all btn selected
+        mainScene.toggleBtn(0);
         // 判断主场景是否有父级
         // 如果有，说明已经被添加到场景中
         if (!mainScene.parent) {
@@ -34,6 +37,15 @@ var SceneManager = (function () {
             // 把主场景添加到之前设置好的根舞台中
             stage.addChild(mainScene);
         }
+        if (SceneManager.instance.playerScene.parent) {
+            mainScene.removeChild(SceneManager.instance.playerScene);
+        }
+    };
+    // 玩家场景
+    SceneManager.toPlayerScene = function () {
+        var stage = this.instance._stage;
+        // 把玩家场景添加到主场景
+        this.instance.mainScene.addChild(this.instance.playerScene);
     };
     return SceneManager;
 }());

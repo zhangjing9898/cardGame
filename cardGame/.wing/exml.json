@@ -11,5 +11,10 @@
         "path": "PlayerScene.ts",
         "class": "PlayerScene",
         "parentPath": ""
+    },
+    "16942ca37c0": {
+        "path": "HeroScene.ts",
+        "class": "HeroScene",
+        "parentPath": ""
     }
 }
